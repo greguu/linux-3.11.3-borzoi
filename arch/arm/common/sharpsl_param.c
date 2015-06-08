@@ -41,7 +41,9 @@ EXPORT_SYMBOL(sharpsl_param);
 
 void sharpsl_save_param(void)
 {
-	memcpy(&sharpsl_param, (void *)PARAM_BASE, sizeof(struct sharpsl_param_info));
+	/*
+	 * Breaks boot -> needs fix !
+	memcpy(&sharpsl_param, (void *)PARAM_BASE, sizeof(struct sharpsl_param_info)); */
 
 	if (sharpsl_param.comadj_keyword != COMADJ_MAGIC)
 		sharpsl_param.comadj=-1;

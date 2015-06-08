@@ -458,12 +458,12 @@ static inline void spitz_keys_init(void) {}
 static struct gpio_led spitz_gpio_leds[] = {
 	{
 		.name			= "spitz:amber:charge",
-		.default_trigger	= "sharpsl-charge",
+		.default_trigger	= "heartbeat",
 		.gpio			= SPITZ_GPIO_LED_ORANGE,
 	},
 	{
 		.name			= "spitz:green:hddactivity",
-		.default_trigger	= "ide-disk",
+		.default_trigger	= "disk-activity",
 		.gpio			= SPITZ_GPIO_LED_GREEN,
 	},
 };
@@ -655,7 +655,7 @@ static struct pxaohci_platform_data spitz_ohci_platform_data = {
 	.init		= spitz_ohci_init,
 	.exit		= spitz_ohci_exit,
 	.flags		= ENABLE_PORT_ALL | NO_OC_PROTECTION,
-	.power_budget	= 150,
+	.power_budget	= 180,
 };
 
 static void __init spitz_uhc_init(void)
